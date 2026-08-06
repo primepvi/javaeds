@@ -3,8 +3,7 @@ public class Main {
 	int[] numbers = {3, 1, 5, 10, 0, 9, -1};
 
 	printArray(numbers);
-	Sorter.insertionSort(numbers);
-	printArray(numbers);
+	printArray(Sorter.mergeSort(numbers));
     }
 
     private static void printArray(int[] array) {
