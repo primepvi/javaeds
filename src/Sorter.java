@@ -27,27 +27,27 @@ public class Sorter {
 		int cursorB = 0;
 
 		while (cursorA < arrayA.length && cursorB < arrayB.length) {
-		    if (arrayA[cursorA] <= arrayB[cursorB]) {
-			result[cursorA + cursorB] = arrayA[cursorA];
-			cursorA++;
-		    } else {
-			result[cursorA + cursorB] = arrayB[cursorB];
-			cursorB++;
-		    }
+			if (arrayA[cursorA] <= arrayB[cursorB]) {
+				result[cursorA + cursorB] = arrayA[cursorA];
+				cursorA++;
+			} else {
+				result[cursorA + cursorB] = arrayB[cursorB];
+				cursorB++;
+			}
 		}
 
 		if (cursorA < arrayA.length) {
-		    for (int i = cursorA; i < arrayA.length; i++) {
-			result[cursorA + cursorB] = arrayA[cursorA];
-			cursorA++;
-		    }
+			for (int i = cursorA; i < arrayA.length; i++) {
+				result[cursorA + cursorB] = arrayA[cursorA];
+				cursorA++;
+			}
 		}
 
 		if (cursorB < arrayB.length) {
-		    for (int i = cursorB; i < arrayB.length; i++) {
-			result[cursorA + cursorB] = arrayB[cursorB];
-			cursorB++;
-		    }
+			for (int i = cursorB; i < arrayB.length; i++) {
+				result[cursorA + cursorB] = arrayB[cursorB];
+				cursorB++;
+			}
 		}
 
 		return result;
