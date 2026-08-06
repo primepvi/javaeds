@@ -52,4 +52,42 @@ public class Sorter {
 
 		return result;
 	}
+
+	public static int[] quickSort(int[] array) {
+		if (array.length <= 1)
+			return array;
+
+		int pivot = array[0];
+
+		int[] arrayLeft = new int[array.length];
+		int[] arrayRight = new int[array.length];
+
+		int cursorLeft = 0;
+		int cursorRight = 0;
+
+		for (int i = 1; i < array.length; i++) {
+			if (array[i] >= pivot) {
+				arrayRight[cursorRight++] = array[i];
+			} else {
+				arrayLeft[cursorLeft++] = array[i];
+			}
+		}
+
+		int[] resultArrayLeft = quickSort(Arrays.copyOf(arrayLeft, cursorLeft));
+		int[] resultArrayRight = quickSort(Arrays.copyOf(arrayRight, cursorRight));
+		int[] resultArray = new int[resultArrayLeft.length + resultArrayRight.length + 1];
+		int resultCursor = 0;
+
+		for (int num : resultArrayLeft) {
+			resultArray[resultCursor++] = num;
+		}
+
+		resultArray[resultCursor++] = pivot;
+
+		for (int num : resultArrayRight) {
+			resultArray[resultCursor++] = num;
+		}
+
+		return resultArray;
+	}
 }
