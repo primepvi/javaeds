@@ -10,7 +10,6 @@ public class Stack<T extends Object> {
 		this.values = new Object[capacity];
 		this.capacity = capacity;
 		this.length = 0;
-
 	}
 
 	public int capacity() {
@@ -48,7 +47,10 @@ public class Stack<T extends Object> {
 	}
 
 	public String toString() {
-		String[] values = Arrays.stream(this.values).map(Object::toString).toArray(String[]::new);
+		String[] values = Arrays.stream(this.values)
+				.map(Object::toString)
+				.toArray(String[]::new);
+
 		return "[" + String.join(",", values) + "]";
 	}
 }
