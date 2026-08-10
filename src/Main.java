@@ -1,17 +1,15 @@
 public class Main {
 	public static void main(String[] args) {
-		int[] numbers = { 3, 1, 5, 10, 0, 9, -1 };
+	    Stack<Integer> numbers = new Stack<Integer>(10);
+	    for (int i = 0; i < 10; i++) {
+		numbers.push(i);
+	    }
 
-		printArray(numbers);
-		printArray(Sorter.quickSort(numbers));
-	}
-
-	private static void printArray(int[] array) {
-		for (int element : array) {
-			System.out.print(element);
-			System.out.print(" ");
-		}
-
-		System.out.print("\n");
+	    System.out.println(numbers);
+	    
+	    while (!numbers.isEmpty()) {
+		Integer curr = numbers.pop();
+		System.out.println(curr);
+	    }
 	}
 }
