@@ -3,3 +3,6 @@ This repository contains some algorithms and data structures implementations wri
 
 ## Algorithms
 - [Sort](src/Sorter.java)
+
+## Data Structures
+- [Stack](src/Stack.java)
