@@ -1,24 +1,17 @@
 public class Main {
     public static void main(String[] args) {
-	Queue<Integer> queue = new Queue(2);
-	queue.enqueue(10);
-	printQueue(queue);
+	LinkedList list = new LinkedList();
+	list.append(10);
+	list.prepend(5);
+	list.append(15);
+	list.prepend(0);
+	list.append(20);
 
-	queue.enqueue(20);
-	printQueue(queue);
+	LinkedListNode head = list.head();
+	LinkedListNode tail = list.tail();
+	LinkedListNode mid = list.get(list.length() / 2);
 	
-	System.out.println(queue.dequeue());
-	printQueue(queue);
-
-	queue.enqueue(30);
-	printQueue(queue);
-
-	System.out.println(queue.dequeue());
-	printQueue(queue);
-    }
-
-    private static<T> void printQueue(Queue<T> queue) {
-	System.out.printf("Start: %d | End: %d\n", queue.start(), queue.end());
-	System.out.println(queue.toString());
+	System.out.printf("head: %d, tail: %d, mid: %d\n", head.value, tail.value, mid.value);
+	System.out.println(list.toString());
     }
 }
