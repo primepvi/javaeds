@@ -1,15 +1,19 @@
 import java.util.Arrays;
 
-public class Stack<T extends Object> {
+public class Queue<T extends Object> {
     private Object[] values;
 
     private int capacity;
     private int length;
+    private int start, end;
 
-    public Stack(int capacity) {
+    public Queue(int capacity) {
 	this.values = new Object[capacity];
 	this.capacity = capacity;
-	this.length = 0;
+	
+	this.length = 0;	
+	this.start = 0;
+	this.end = 0;
     }
 
     public int capacity() {
@@ -20,30 +24,45 @@ public class Stack<T extends Object> {
 	return this.length;
     }
 
-    public void push(T element) {
+    public int start() {
+	return this.start;
+    }
+
+    public int end() {
+	return this.end;
+    } 
+
+    public void enqueue(T element) {
 	if (this.isFull()) {
 	    this.capacity *= 2;
 	    this.values = Arrays.copyOf(this.values, this.capacity);
 	}
 
-	this.values[this.length++] = element;
+	this.values[this.end] = element;
+	this.end = (this.end + 1) % this.capacity;
+	this.length++;
     }
 
     @SuppressWarnings("unchecked")
-    public T pop() {
+    public T dequeue() {
 	if (this.isEmpty()) {
 	    return null;
 	}
 
-	return (T) this.values[--this.length];
+	T value = (T) this.values[this.start];
+	this.values[this.start] = null;
+	this.start = (this.start + 1) % this.capacity;
+	this.length--;
+
+	return value;
     }
 
     public boolean isEmpty() {
-	return this.length == 0;
+	return this.start == this.end;
     }
 
     public boolean isFull() {
-	return this.length == this.capacity;
+	return (this.end + 1) % this.capacity == this.start;
     }
 
     public String toString() {
