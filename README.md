@@ -6,4 +6,6 @@ This repository contains some algorithms and data structures implementations wri
 
 ## Data Structures
 - [Stack](src/Stack.java)
+- [Queue](src/Queue.java)
+- [LinkedList](src/LinkedList.java)
 - [Binary Tree](src/BinaryTree.java)
