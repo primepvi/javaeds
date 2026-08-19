@@ -2,7 +2,9 @@
 This repository contains some algorithms and data structures implementations written in java.
 
 ## Algorithms
-- [Sort](src/Sorter.java)
+- [InsertionSort](src/Sorter.java#4)
+- [MergeSort](src/Sorter.java#18)
+- [QuickSort](src/Sorter.java#56)
 
 ## Data Structures
 - [Stack](src/Stack.java)
