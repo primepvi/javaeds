@@ -1,17 +1,12 @@
 public class Main {
 	public static void main(String[] args) {
-		LinkedList list = new LinkedList();
-		list.append(10);
-		list.prepend(5);
-		list.append(15);
-		list.prepend(0);
-		list.append(20);
+		AVLTree tree = new AVLTree();
+		tree.insert(15);
+		tree.insert(10);
+		tree.insert(20);
+		tree.insert(30);
+		tree.insert(40);
 
-		LinkedListNode head = list.head();
-		LinkedListNode tail = list.tail();
-		LinkedListNode mid = list.get(list.length() / 2);
-
-		System.out.printf("head: %d, tail: %d, mid: %d\n", head.value, tail.value, mid.value);
-		System.out.println(list.toString());
+		tree.preOrderEach(node -> System.out.println(node.value));
 	}
 }

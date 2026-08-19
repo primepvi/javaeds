@@ -3,11 +3,15 @@ import java.util.function.Consumer;
 public class BinaryTree {
 	private BinaryTreeNode root;
 
+	public BinaryTreeNode root() {
+		return this.root;
+	}
+
 	public void insert(int value) {
 		this.root = this.execInsert(this.root, value);
 	}
 
-	private BinaryTreeNode execInsert(BinaryTreeNode node, int value) {
+	protected BinaryTreeNode execInsert(BinaryTreeNode node, int value) {
 		if (node == null)
 			return new BinaryTreeNode(value);
 
