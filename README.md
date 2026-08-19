@@ -9,3 +9,4 @@ This repository contains some algorithms and data structures implementations wri
 - [Queue](src/Queue.java)
 - [LinkedList](src/LinkedList.java)
 - [Binary Tree](src/BinaryTree.java)
+- [AVLTree](src/AVLTree.java)
