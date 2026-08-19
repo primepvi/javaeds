@@ -7,50 +7,50 @@ public class Stack<T extends Object> {
     private int length;
 
     public Stack(int capacity) {
-	this.values = new Object[capacity];
-	this.capacity = capacity;
-	this.length = 0;
+        this.values = new Object[capacity];
+        this.capacity = capacity;
+        this.length = 0;
     }
 
     public int capacity() {
-	return this.capacity;
+        return this.capacity;
     }
 
     public int length() {
-	return this.length;
+        return this.length;
     }
 
     public void push(T element) {
-	if (this.isFull()) {
-	    this.capacity *= 2;
-	    this.values = Arrays.copyOf(this.values, this.capacity);
-	}
+        if (this.isFull()) {
+            this.capacity *= 2;
+            this.values = Arrays.copyOf(this.values, this.capacity);
+        }
 
-	this.values[this.length++] = element;
+        this.values[this.length++] = element;
     }
 
     @SuppressWarnings("unchecked")
     public T pop() {
-	if (this.isEmpty()) {
-	    return null;
-	}
+        if (this.isEmpty()) {
+            return null;
+        }
 
-	return (T) this.values[--this.length];
+        return (T) this.values[--this.length];
     }
 
     public boolean isEmpty() {
-	return this.length == 0;
+        return this.length == 0;
     }
 
     public boolean isFull() {
-	return this.length == this.capacity;
+        return this.length == this.capacity;
     }
 
     public String toString() {
-	String[] values = Arrays.stream(this.values)
-	    .map(x -> x == null ? "null" : x.toString())
-	    .toArray(String[]::new);
+        String[] values = Arrays.stream(this.values)
+                .map(x -> x == null ? "null" : x.toString())
+                .toArray(String[]::new);
 
-	return "[" + String.join(",", values) + "]";
+        return "[" + String.join(",", values) + "]";
     }
 }
