@@ -12,3 +12,4 @@ This repository contains some algorithms and data structures implementations wri
 - [LinkedList](src/LinkedList.java)
 - [Binary Tree](src/BinaryTree.java)
 - [AVLTree](src/AVLTree.java)
+- [Red-Black Tree](src/RBTree.java)

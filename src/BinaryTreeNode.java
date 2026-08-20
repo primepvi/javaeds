@@ -18,7 +18,7 @@ public class BinaryTreeNode {
 		int rightHeight = this.right == null ? 0 : this.right.height();
 
 		return 1 + Math.max(leftHeight, rightHeight);
-	} 
+	}
 
 	public BinaryTreeNode rotateLeft() {
 		BinaryTreeNode root = this.right;

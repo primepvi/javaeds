@@ -13,7 +13,7 @@ public class AVLTree extends BinaryTree {
 
         return this.balanceNode(node);
     }
-
+    
     private int calculateBalanceFactor(BinaryTreeNode node) {
         int leftHeight = node.left == null ? 0 : node.left.height() + 1;
         int rightHeight = node.right == null ? 0 : node.right.height() + 1;
